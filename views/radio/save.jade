@@ -1,0 +1,16 @@
+﻿extends ../layout
+block content
+  h1 Guardar radio
+  form(method="post", action="#{action}")
+    -if(put)
+      input(type="hidden", name="_method", value="PUT")
+    label Nombre
+    br
+    input(type="text", name="nombreRadio", required="required", value="#{radio.nombreRadio}")
+    br
+    label Ip
+    br
+    input(type="text", name="ip", required="required", value="#{radio.ip}")
+    br
+    input(type="submit", value="Guardar")
+    a(href="/radio") Cancelar

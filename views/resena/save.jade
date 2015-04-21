@@ -1,0 +1,17 @@
+﻿extends ../layout
+block content
+  h1 Nueva Reseña
+  form(method="post", action="#{action}")
+    -if(put)
+      input(type="hidden", name="_method", value="PUT")
+    //label nombreRadio
+    input(type="hidden", name="nombreRadio", value="#{resena.nombreRadio}")
+    label comentario
+    br
+    input(type="text", name="comentario", required="required", value="#{resena.comentario}")
+    br
+    label Puntaje (calificar de 1 a 7)
+    br
+    input(type="number", name="puntaje", required="required", value="#{resena.puntaje}" , min="1", max="7")
+    br
+    input(type="submit", value="Guardar")

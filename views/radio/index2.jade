@@ -1,0 +1,23 @@
+﻿extends ../layout
+block content
+  h1 Radios
+  p
+  -if(radio.length > 0)
+    table
+      thead
+        tr
+          th Radio
+          th IP
+          th
+          th
+          th
+      tbody
+        -each item in radio
+          tr
+            td #{item.nombreRadio}
+            td #{item.ip}
+            td 
+              a(href="/radio/#{item._id}") Ver
+
+  -else
+    p No existen radios creadas

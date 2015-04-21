@@ -1,0 +1,31 @@
+﻿extends ../layout
+block content
+  h1 Reseñas
+  p
+    a(href="/resena/create") Crear una nueva resena
+  -if(resena.length > 0)
+    table
+      thead
+        tr
+          th Nombre Radio
+          th Comentario
+          th Puntaje
+          th
+          th
+          th
+      tbody
+        -each item in resena
+          tr
+            td #{item.nombreRadio}
+            td #{item.comentario}
+            td #{item.puntaje}
+            td 
+              a(href="/resena/#{item._id}") Ver
+            td 
+              a(href="/resena/#{item._id}/edit") Editar
+            td
+              form(method="post", action="/resena/#{item._id}")
+                input(type="hidden", name="_method", value="DELETE")
+                a(href="javascript:void(0);", onclick="if(confirm('¿Está seguro que desea eliminar este registro?')){this.parentNode.submit();}") Eliminar
+  -else
+    p No existen resenas creadas

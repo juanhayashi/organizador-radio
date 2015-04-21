@@ -1,0 +1,49 @@
+doctype
+html
+  head
+    title #{radio.nombreRadio}
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    style(type='text/css').
+      #contenedor {
+      float:right;
+      border: 1px solid #CCC;
+      background-color: #E0E0E0;
+      padding: .5em;
+      }
+
+
+  body
+    #contenedor
+      .col-sm-8.col-md-14.sidebar
+        iframe(id="frame2" name="frame2" src="/chat", style='width: 400px; height: 400px;', frameborder="0")
+    li #{radio.nombreRadio} #{radio.ip}
+    br
+    .col-sm-8.col-md-14.sidebar
+        iframe(src="http://"+radio.ip, style='width: 400px; height: 35px;', frameborder="0")
+
+    //Se muestran las reseñas.
+   #cosa   
+     h1 Reseñas
+     font(size='3')
+       p 
+       -if(resena.length > 0)
+         table
+           thead
+             tr
+               th Reseña
+               th Puntaje
+               th
+               th
+               th
+           tbody 
+             -each item in resena
+               tr
+                 td #{item.comentario}
+                 td #{item.puntaje}
+                 td
+       -else
+         p No existen reseñas creadas   
+    .col-sm-8.col-md-14.sidebar
+        iframe(id="frame1" name="frame1" src="/resena/create/"+radio.nombreRadio, style='width: 400px; height: 400px;', frameborder="0")
+    a(href="/") Volver atrás
+

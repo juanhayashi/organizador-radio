@@ -1,0 +1,29 @@
+﻿extends ../layout
+block content
+  h1 Radios
+  p
+    a(href="/radio/create") Crear una nueva radio
+  -if(radio.length > 0)
+    table
+      thead
+        tr
+          th Radio
+          th IP
+          th
+          th
+          th
+      tbody
+        -each item in radio
+          tr
+            td #{item.nombreRadio}
+            td #{item.ip}
+            td 
+              a(href="/radio/#{item._id}") Ver
+            td 
+              a(href="/radio/#{item._id}/edit") Editar
+            td
+              form(method="post", action="/radio/#{item._id}")
+                input(type="hidden", name="_method", value="DELETE")
+                a(href="javascript:void(0);", onclick="if(confirm('¿Está seguro que desea eliminar este registro?')){this.parentNode.submit();}") Eliminar
+  -else
+    p No existen radios creadas
