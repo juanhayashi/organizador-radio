@@ -45,5 +45,5 @@ html
          p No existen reseñas creadas   
     .col-sm-8.col-md-14.sidebar
         iframe(id="frame1" name="frame1" src="/resena/create/"+radio.nombreRadio, style='width: 400px; height: 400px;', frameborder="0")
-    a(href="/radio") Volver atrás
+    a(href="/") Volver atrás
 

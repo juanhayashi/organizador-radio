@@ -1,7 +1,7 @@
 //Función Javascript
 
 //Variables de conexión
-var serverIP = 'localhost'; // IP SERVIDOR!
+var serverIP = '192.168.43.76'; // IP SERVIDOR!
 var port = 8080;
 
 //Variables locales

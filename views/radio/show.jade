@@ -18,8 +18,10 @@ html
         iframe(id="frame2" name="frame2" src="/chat", style='width: 400px; height: 400px;', frameborder="0")
     li #{radio.nombreRadio} #{radio.ip}
     br
-    .col-sm-8.col-md-14.sidebar
-        iframe(src="http://"+radio.ip, style='width: 400px; height: 35px;', frameborder="0")
+    audio(controls='')
+      source(src="http://"+radio.ip, type='audio/mpeg')
+      source(src="http://"+radio.ip, type='audio/ogg')
+      em Su navegador no soporta audio HTML5.
 
     //Se muestran las reseñas.
    #cosa   
